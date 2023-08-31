@@ -1,11 +1,13 @@
 ﻿using EFxceptions;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.ChangeTracking;
 using Microsoft.Extensions.Configuration;
 using Sheenam.Api.Models.Foundations.Guests;
+using System.Threading.Tasks;
 
 namespace Sheenam.Api.Brokers.Storages;
 
-public  class StorageBroker : EFxceptionsContext
+public  class StorageBroker : EFxceptionsContext, IStorageBroker
 {
     private readonly IConfiguration Configuration;
 
@@ -25,5 +27,15 @@ public  class StorageBroker : EFxceptionsContext
     public override void Dispose() { }
 
     public DbSet<Guest> Guests { get; set; }
+
+    public async ValueTask<Guest> InsertGuestAsync(Guest guest)
+    {
+        using var broker = new StorageBroker(this.Configuration);
+
+        EntityEntry<Guest> gustEntityEntry = await broker.Guests.AddAsync(guest);
+        await broker.SaveChangesAsync();
+
+        return gustEntityEntry.Entity;
+    }
 
 }
