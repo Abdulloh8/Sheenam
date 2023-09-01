@@ -1,6 +1,6 @@
 //==================================================
 // Copyright (c) Coalition of Good-Hearted Engineers
-// Free To Use Comfort and Peace 
+// Free To Use To Find Comfort and Peace 
 //==================================================
 
 using Microsoft.AspNetCore.Builder;
@@ -28,7 +28,7 @@ namespace Sheenam.Api
             services.AddControllers();
             services.AddDbContext<StorageBroker>();
             services.AddTransient<IStorageBroker, StorageBroker>();
-            //
+            
 
             services.AddSwaggerGen(options =>
             {
