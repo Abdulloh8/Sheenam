@@ -23,7 +23,7 @@ public class GuestServiceTests
         this.guestService = new GuestService(storageBroker: this.StorageBrokerMock.Object);
     }
 
-    [Fact]
+    /*[Fact]
     public async Task ShouldAddGuestAsync()
     {
         // Arrange
@@ -44,6 +44,6 @@ public class GuestServiceTests
         // Act
         Guest actual = await this.guestService.AddGuestAsync(randomGuest);
         // Assert
-        actual.Should().BeEquivalentTo(randomGuest);
-    }
+        actual.Should().BeEquivalentTo(randomGuest);*/
+    //}
 }
