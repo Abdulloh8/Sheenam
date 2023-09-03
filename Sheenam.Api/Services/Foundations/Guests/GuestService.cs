@@ -14,11 +14,10 @@ public class GuestService : IGuestService
 {
     private readonly IStorageBroker _storageBroker;
 
-    public GuestService(IStorageBroker storageBroker)
-    {
+    public GuestService(IStorageBroker storageBroker) =>
         this._storageBroker = storageBroker;
-    }
-    ValueTask<Guest> IGuestService.AddGuestAsync(Guest guest) =>
-        this._storageBroker.InsertGuestAsync(guest);
+    
+    public async ValueTask<Guest> AddGuestAsync(Guest guest) =>
+        await this._storageBroker.InsertGuestAsync(guest);
 
 }
