@@ -11,7 +11,11 @@ namespace Sheenam.Api.Tests.Unit.Services.Foundations.Guests
         [Fact]
         public async Task ShouldThrowValidationExceptionOnAddIfGuestIsNullAndLogitAsync()
         {
+            //given
 
+            //when
+
+            //then
         }
     }
 }
