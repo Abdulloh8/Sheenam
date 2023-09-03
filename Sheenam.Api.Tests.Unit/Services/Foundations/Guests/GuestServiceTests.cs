@@ -61,24 +61,6 @@ public partial class GuestServiceTests
 
         this.StorageBrokerMock.VerifyNoOtherCalls();
 
-        // Arrange
-        /*Guest randomGuest = new Guest
-        {
-            Address = "Brooks Str.#12",
-            DataOfBirth = new DateTime(),
-            Email = "random@mail.ru",
-            FirstName = "Alex",
-            LastName = "Doe",
-            Gender = GenderType.Male,
-            Id = Guid.NewGuid(),
-            PhoneNumber = "1234567890",
-        };
-        this.StorageBrokerMock.Setup(broker =>
-        broker.InsertGuestAsync(randomGuest))
-            .ReturnsAsync(randomGuest);
-        // Act
-        Guest actual = await this.guestService.AddGuestAsync(randomGuest);
-        // Assert
-        actual.Should().BeEquivalentTo(randomGuest);*/
+        
     }
 }
