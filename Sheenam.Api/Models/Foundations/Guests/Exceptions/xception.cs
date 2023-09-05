@@ -3,9 +3,9 @@
 // Free To Use Comfort and Peace 
 //==================================================
 
-namespace Sheenam.Api.Models.Foundations.Guests.Exceptions
+namespace Sheenam.Api.Models.Foundations.Guests.Exceptions;
+
+public class xception
 {
-    public class xception
-    {
-    }
+
 }
